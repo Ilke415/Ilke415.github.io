@@ -1,0 +1,211 @@
+[
+  {
+    "id": "faculty",
+    "name": "Faculty",
+    "years": "2021",
+    "x": 100,
+    "y": 250,
+    "r": 52,
+    "trees": 2,
+    "kind": "faculty",
+    "title": "Faculty of Technical Sciences",
+    "role": "Student",
+    "place": "Čačak, Serbia · University of Kragujevac",
+    "dates": "2021",
+    "client": "My first contact with Business Central, in the Information Systems course",
+    "points": [
+      "The teaching assistant was Stefan Sošić, later my boss at Bcility, who has since become a Microsoft MVP",
+      "Learned the basics of ERP and business processes"
+    ],
+    "fun": "Honestly, I didn't like it at first. I was used to building apps from the ground up, and Business Central is mostly about extending Microsoft's code. That changed.",
+    "tags": [
+      "Information Systems",
+      "ERP basics"
+    ],
+    "countries": [
+      "Serbia"
+    ]
+  },
+  {
+    "id": "bcility",
+    "name": "Bcility",
+    "years": "2022 – 2024",
+    "x": 230,
+    "y": 430,
+    "r": 92,
+    "trees": 5,
+    "kind": "town",
+    "title": "Bcility",
+    "role": "Business Central Developer, started as a student",
+    "place": "Čačak, Serbia · On-site",
+    "dates": "Jun 2022 – Feb 2024",
+    "client": "Projects for NaviPartner, Denmark: retail and e-commerce ISV",
+    "points": [
+      "Started here as a student and learned AL on real client projects",
+      "Worked on POS functionality for NaviPartner's retail solution",
+      "Helped on localization projects for Balkan countries",
+      "Worked on Bcility's Mandatory Fields app, the small island next door"
+    ],
+    "fun": "My very first task: marking a single field on a report as obsolete.",
+    "tags": [
+      "AL",
+      "Control Add-ins",
+      "JavaScript",
+      "POS"
+    ],
+    "countries": [
+      "Serbia",
+      "Denmark"
+    ]
+  },
+  {
+    "id": "mandatory-fields",
+    "name": "Mandatory Fields",
+    "years": "app",
+    "x": 318,
+    "y": 370,
+    "r": 36,
+    "trees": 1,
+    "kind": "lighthouse",
+    "group": "bcility",
+    "title": "Mandatory Fields",
+    "role": "Bcility's Business Central app on Microsoft Marketplace",
+    "place": "Published by Bcility · I worked on it as a developer",
+    "dates": "Rated 5.0 · 14 languages",
+    "client": "Used by partner companies across Europe, mainly in Germany",
+    "points": [
+      "Enforces required fields before a record can be completed",
+      "Custom UI with Control Add-ins: JavaScript front end synchronized with AL logic",
+      "Available in every country where Business Central is sold"
+    ],
+    "tags": [
+      "AppSource",
+      "Control Add-ins",
+      "JavaScript",
+      "AL"
+    ],
+    "countries": [
+      "Europe"
+    ],
+    "link": "https://marketplace.microsoft.com/en-us/product/pubid.bcility1636664056498%7Caid.bcility-mandatory-field%7Cpappid.987f9697-4e72-4c0f-be95-c618ba5735d4"
+  },
+  {
+    "id": "simplanova",
+    "name": "Simplanova",
+    "years": "2024 – 2026",
+    "x": 610,
+    "y": 400,
+    "r": 100,
+    "trees": 6,
+    "kind": "town",
+    "title": "Simplanova Serbia",
+    "role": "Business Central Developer",
+    "place": "Belgrade, Serbia · Hybrid",
+    "dates": "Feb 2024 – Apr 2026",
+    "client": "GWS mbH, Germany: Business Central ISV with industry solutions",
+    "points": [
+      "Developed and maintained AL extensions for agricultural trade, automotive aftermarket, building materials, steel trading and wholesale food",
+      "Worked within ISV standards for extension design and release"
+    ],
+    "fun": [
+      "Every task needed manual and automated tests before it could ship. I had written tests before, but never under rules this strict.",
+      "German engineering precision in code review: a variable name that didn't follow the naming standard meant the review didn't pass.",
+      "This is where AI first became my companion in development."
+    ],
+    "tags": [
+      "AL",
+      "Microsoft Dynamics 365",
+      "Automated testing",
+      "Manual testing",
+      "Prompt engineering"
+    ],
+    "countries": [
+      "Serbia",
+      "Germany"
+    ]
+  },
+  {
+    "id": "be-terna",
+    "name": "BE-terna",
+    "years": "2026 – now",
+    "x": 900,
+    "y": 270,
+    "r": 108,
+    "trees": 7,
+    "kind": "town",
+    "title": "BE-terna",
+    "role": "Business Central Developer (contract)",
+    "place": "Remote",
+    "dates": "Apr 2026 – present",
+    "client": "Customers in Croatia, Serbia, Slovenia and Bosnia and Herzegovina",
+    "points": [
+      "AL development and integrations for Business Central customers",
+      "Hands-on exposure to Croatian fiscalization and e-invoicing (Fina)",
+      "Maintaining legacy NAV 2015 (C/AL) alongside BC extensions",
+      "AI coding agents and Docker-based environments in daily AL work"
+    ],
+    "project": {
+      "title": "Featured project: automated daily payouts",
+      "text": "A payment platform sends its daily merchant settlements straight into Business Central, and BC turns them into payout and revenue journals, with no spreadsheets in between.",
+      "points": [
+        "Custom Business Central API that the platform calls with REST POST requests, authenticated server-to-server through Microsoft Entra ID (OAuth 2.0)",
+        "Validation on intake with clear error findings per settlement",
+        "Mapping matrices in BC decide accounts, dimensions and currencies (EUR, SEK, PLN), so rule changes never touch the other system",
+        "Journal engine that builds payout and revenue journals, run on demand or by job queue",
+        "Least-privilege permission set for the integration, with certificate-based authentication for production",
+        "62 test scenarios automated with PowerShell against the live API, plus a Postman collection"
+      ],
+      "tags": [
+        "REST API",
+        "API pages",
+        "OAuth 2.0",
+        "Microsoft Entra ID",
+        "Job queue",
+        "PowerShell",
+        "Postman"
+      ]
+    },
+    "fun": [
+      "After years at companies abroad, working in my native language felt strange at first.",
+      "It took a while to get used to Business Central terms in the Balkan languages."
+    ],
+    "tags": [
+      "AL",
+      "C/AL",
+      "REST APIs",
+      "AI Agents",
+      "Generative AI"
+    ],
+    "countries": [
+      "Croatia",
+      "Serbia",
+      "Slovenia",
+      "Bosnia and Herzegovina"
+    ]
+  },
+  {
+    "id": "next",
+    "name": "Next chapter",
+    "years": "open",
+    "x": 1080,
+    "y": 500,
+    "r": 70,
+    "trees": 1,
+    "kind": "fog",
+    "title": "Next chapter",
+    "role": "Open to new Business Central work",
+    "place": "Remote · Serbia",
+    "dates": "Contract or near full-time",
+    "client": "Partners and ISVs who need an experienced AL developer",
+    "points": [
+      "Extensions, integrations and upgrades from NAV to Business Central",
+      "AI-assisted development with coding agents",
+      "Reach out on LinkedIn"
+    ],
+    "tags": [
+      "Available"
+    ],
+    "countries": [],
+    "link": "https://www.linkedin.com/in/stefan-ili%C4%87/"
+  }
+]

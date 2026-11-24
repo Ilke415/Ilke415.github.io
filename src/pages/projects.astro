@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+const projects = [
+  {
+    title: 'Automated daily payouts',
+    where: 'BE-terna · 2026',
+    text: 'A payment platform sends its daily merchant settlements straight into Business Central, and BC turns them into payout and revenue journals.',
+    points: [
+      'Custom Business Central API called with REST POST requests, authenticated server-to-server through Microsoft Entra ID (OAuth 2.0)',
+      'Mapping tables in BC decide accounts, dimensions and currencies (EUR, SEK, PLN)',
+      'Least-privilege permission set and 62 automated API test scenarios in PowerShell',
+    ],
+    tags: ['REST API', 'OAuth 2.0', 'Entra ID', 'Job queue', 'PowerShell'],
+  },
+  {
+    title: 'Mandatory Fields',
+    where: 'Bcility · Microsoft Marketplace',
+    text: "Bcility's Business Central app that enforces required fields before a record can be completed. I worked on it as a developer.",
+    points: ['Custom UI with Control Add-ins: JavaScript front end synchronized with AL logic', 'Rated 5.0, available in 14 languages'],
+    tags: ['AL', 'Control Add-ins', 'JavaScript'],
+    link: 'https://marketplace.microsoft.com/en-us/product/pubid.bcility1636664056498%7Caid.bcility-mandatory-field%7Cpappid.987f9697-4e72-4c0f-be95-c618ba5735d4',
+  },
+];
+---
+<Base title="Projects – Stefan Ilić">
+  <section class="band">
+    <h1>Projects</h1>
+    <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))">
+      {projects.map((p) => (
+        <article class="card" style="margin:0">
+          <h2>{p.title}</h2>
+          <div class="meta"><span>{p.where}</span></div>
+          <p style="margin:0 0 10px">{p.text}</p>
+          <ul>{p.points.map((x) => <li>{x}</li>)}</ul>
+          <div class="tags">{p.tags.map((t) => <span class="tag">{t}</span>)}</div>
+          {p.link && <p style="margin:14px 0 0"><a href={p.link}>View on Microsoft Marketplace</a></p>}
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>

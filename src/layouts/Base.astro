@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description?: string }
+const { title, description = 'Stefan Ilić, Microsoft Dynamics 365 Business Central developer from Serbia.' } = Astro.props;
+const path = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Journey' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/about/', label: 'About' },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Stefan Ilić – Blog" href="/rss.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL('/stefan.jpg', Astro.site)} />
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">Stefan Ilić</a>
+    <nav aria-label="Main">
+      {links.map((l) => (
+        <a href={l.href} aria-current={(l.href === '/' ? path === '/' : path.startsWith(l.href)) ? 'page' : undefined}>{l.label}</a>
+      ))}
+    </nav>
+  </header>
+  <main><slot /></main>
+  <footer>
+    © {new Date().getFullYear()} Stefan Ilić ·
+    <a href="https://www.linkedin.com/in/stefan-ili%C4%87/">LinkedIn</a> ·
+    <a href="/rss.xml">RSS</a>
+  </footer>
+</body>
+</html>

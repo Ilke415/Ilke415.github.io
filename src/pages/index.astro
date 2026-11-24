@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import Islands from '../components/Islands.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+<Base title="Stefan Ilić – Business Central developer">
+  <section class="intro" id="journey">
+    <img class="avatar" src="/stefan.jpg" alt="Stefan Ilić" width="104" height="104" />
+    <div>
+      <h1>My Business Central journey</h1>
+      <p>Four years of AL and Business Central, across ISVs and partners in Denmark, Germany and the Adriatic region. Pick an island to sail in.</p>
+    </div>
+  </section>
+  <Islands />
+  {posts.length > 0 && (
+    <section class="band">
+      <h2>Latest from the blog</h2>
+      <ul class="posts">
+        {posts.map((p) => (
+          <li><a href={`/blog/${p.id}/`}><time datetime={p.data.pubDate.toISOString()}>{p.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</time><strong>{p.data.title}</strong></a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Base>

@@ -1,0 +1,15 @@
+---
+// The career map. Island content lives in src/data/journey.json.
+---
+<div class="stage">
+  <div>
+    <div class="mapwrap" id="wrap">
+      <svg id="map" viewBox="0 0 1200 640" role="group" aria-label="Map of career islands"></svg>
+      <button class="back" id="back" type="button">← All islands</button>
+      <div class="hint">Click an island</div>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Jump to island"></div>
+  </div>
+  <article class="card" id="card" aria-live="polite"></article>
+</div>
+<script src="./islands.js"></script>

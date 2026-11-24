@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<Base title="Blog – Stefan Ilić" description="Notes on Business Central, AL and AI-assisted development.">
+  <section class="band">
+    <h1>Blog</h1>
+    <p style="color:var(--muted);margin-top:0">Notes on Business Central, AL and AI-assisted development.</p>
+    {posts.length === 0 ? <p>The first post is on its way.</p> : (
+      <ul class="posts">
+        {posts.map((p) => (
+          <li><a href={`/blog/${p.id}/`}><time datetime={p.data.pubDate.toISOString()}>{p.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</time><strong>{p.data.title}</strong><span style="display:block;color:var(--muted)">{p.data.description}</span></a></li>
+        ))}
+      </ul>
+    )}
+  </section>
+</Base>
