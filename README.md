@@ -20,7 +20,7 @@ npm run dev      # http://localhost:4321
 
 1. Create a public GitHub repo named `Ilke415.github.io`.
 2. In `astro.config.mjs`, the site URL is already set to https://Ilke415.github.io.
-3. Push this folder to the `main` branch.
+3. Push this folder to the `master` branch.
 4. On GitHub: Settings → Pages → Build and deployment → Source: **GitHub Actions**.
 
-Every push to `main` then builds and deploys the site automatically.
+Every push to `master` then builds and deploys the site automatically.
